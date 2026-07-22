@@ -142,6 +142,7 @@
     <ClCompile Include="OrderBook.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="OrderBook.hpp" />
     <ClInclude Include="OrderModelling.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
