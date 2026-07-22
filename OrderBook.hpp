@@ -15,5 +15,6 @@ private:
 public:
 	double bestBid() const;
 	double bestAsk() const;
+	void addOrder(const Order& order);
 };
 
