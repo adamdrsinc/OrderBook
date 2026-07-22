@@ -2,15 +2,29 @@
 
 #include <cstdint>
 #include <ctime>
+#include <boost/uuid/uuid.hpp>
+#include <boost/uuid/uuid_generators.hpp>
 
 struct Order{
-    std::uint64_t id;
+    boost::uuids::uuid id;
     double price;
     double quantity;
     bool isBuyOrder;
     time_t timestamp;
 
-    Order(std::uint64_t id,
+    Order(double price,
+        double quantity,
+        bool isBuyOrder,
+        std::time_t timestamp)
+        :price(price),
+        quantity(quantity),
+        isBuyOrder(isBuyOrder),
+        timestamp(timestamp)
+    {
+        id = boost::uuids::random_generator()();
+    }
+
+    Order(boost::uuids::uuid id,
         double price,
         double quantity,
         bool isBuyOrder,
