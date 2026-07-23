@@ -17,12 +17,8 @@ public:
     Side isBuyOrder;
     time_t timestamp;
 
-    static Order create(double price, double quantity, Side isBuyOrder, time_t timestamp) {
-        return Order(generate_order_id(), price, quantity, isBuyOrder, timestamp);
-    }
-    static Order fromExisting(order_id id, double price, double quantity, Side isBuyOrder, time_t timestamp) {
-        return Order(id, price, quantity, isBuyOrder, timestamp);
-    }
+    static Order create(double price, double quantity, Side isBuyOrder, time_t timestamp);
+    static Order fromExisting(order_id id, double price, double quantity, Side isBuyOrder, time_t timestamp);
 
 private:
     static order_id generate_order_id() {

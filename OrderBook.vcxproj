@@ -140,11 +140,12 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Order.cpp" />
     <ClCompile Include="OrderBook.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="OrderBook.hpp" />
-    <ClInclude Include="OrderModelling.hpp" />
+    <ClInclude Include="Order.hpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

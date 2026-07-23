@@ -21,9 +21,12 @@
     <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Order.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="OrderModelling.hpp">
+    <ClInclude Include="Order.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="OrderBook.hpp">
