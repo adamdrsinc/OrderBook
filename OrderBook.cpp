@@ -11,7 +11,7 @@ double OrderBook::bestAsk() const {
 }
 
 void OrderBook::addOrder(const Order& order) {
-	std::shared_ptr<Order> shared_order = std::make_shared<Order>(order);
+	auto shared_order = std::make_shared<Order>(order);
 
 	orderIndex[shared_order->id] = shared_order;
 
@@ -25,4 +25,8 @@ void OrderBook::addOrder(const Order& order) {
 		auto& asks_bucket = asks[shared_order->price];
 		asks_bucket.push_back(shared_order);
 	}
+}
+
+void OrderBook::print() {
+
 }

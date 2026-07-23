@@ -3,5 +3,5 @@
     <Platform Name="x64" />
     <Platform Name="x86" />
   </Configurations>
-  <Project Path="OrderBook.vcxproj" />
+  <Project Path="OrderBook.vcxproj" Id="77dc5dd6-f69f-4bc2-ba44-5fb7c18596fa" />
 </Solution>

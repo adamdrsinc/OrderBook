@@ -5,8 +5,10 @@
 #include <boost/uuid/uuid.hpp>
 #include <boost/uuid/uuid_generators.hpp>
 
+using order_id = boost::uuids::uuid;
+
 struct Order{
-    boost::uuids::uuid id;
+    order_id id;
     double price;
     double quantity;
     bool isBuyOrder;
@@ -24,7 +26,7 @@ struct Order{
         id = boost::uuids::random_generator()();
     }
 
-    Order(boost::uuids::uuid id,
+    Order(order_id id,
         double price,
         double quantity,
         bool isBuyOrder,
