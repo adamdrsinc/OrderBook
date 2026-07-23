@@ -31,6 +31,6 @@ private:
 
 // Will use this later to cache aggregate data for each price level in the order book
 /*struct PriceLevel {
-	double price;
-	double totalQuantity;
-};*/
+	//double price;
+	//double totalQuantity;
+//};*/
