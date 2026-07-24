@@ -22,6 +22,7 @@ public:
 	double bestBid() const;
 	double bestAsk() const;
 	void addOrder(const Order& order);
+	void cancelOrder(const order_id id);
 	void print();
 };
 

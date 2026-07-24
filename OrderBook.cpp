@@ -29,6 +29,43 @@ void OrderBook::addOrder(const Order& order) {
 	}
 }
 
+void OrderBook::cancelOrder(const order_id id) {
+	auto it = orderIndex.find(id);
+	if (it == orderIndex.end()) return;
+	order_sptr order = it->second;
+
+	//Delete from bids
+	if (order->isBuyOrder == Side::Bid) {
+		auto bids_it = bids.find(order->price);
+		if (bids_it != bids.end()) {
+			auto& orders = bids_it->second;
+			auto order_it = std::find_if(orders.begin(), orders.end(), [id](order_sptr order) {return order->id == id;});
+			if (order_it != orders.end()) {
+				orders.erase(order_it);
+				if (orders.empty()) {
+					bids.erase(bids_it);
+				}
+			}
+		}
+	}
+	else { // Or from asks
+		auto asks_it = asks.find(order->price);
+		if (asks_it != asks.end()) {
+			auto& orders = asks_it->second;
+			auto order_it = std::find_if(orders.begin(), orders.end(), [id](order_sptr order) {return order->id == id;});
+			if (order_it != orders.end()) {
+				orders.erase(order_it);
+				if (orders.empty()) {
+					asks.erase(asks_it);
+				}
+			}
+		}
+	}
+
+	orderIndex.erase(id);
+
+}
+
 void OrderBook::print() {
 	std::cout << "Bids:\n" << std::endl;
 	for (const auto& [price, orders] : bids) {
